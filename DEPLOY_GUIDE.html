@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل نشر DevPlan Pro</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.7; }
+  .container { max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1 { font-size: 2rem; color: #4f46e5; margin-bottom: 0.5rem; }
+  .subtitle { color: #64748b; font-size: 1.05rem; margin-bottom: 2.5rem; }
+  .step { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.75rem; margin-bottom: 1.5rem; position: relative; }
+  .step-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #4f46e5; color: white; border-radius: 50%; font-weight: bold; font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .step h2 { font-size: 1.15rem; color: #1e293b; margin-bottom: 0.6rem; }
+  .step p { color: #475569; font-size: 0.95rem; }
+  .url-box { background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 10px; padding: 0.75rem 1rem; margin: 0.75rem 0; font-family: monospace; font-size: 0.9rem; color: #334155; word-break: break-all; }
+  .url-box a { color: #4f46e5; text-decoration: none; font-weight: 600; font-family: inherit; }
+  .url-box a:hover { text-decoration: underline; }
+  .tip { background: #eff6ff; border-right: 4px solid #3b82f6; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.75rem; font-size: 0.88rem; color: #1e40af; }
+  .warn { background: #fefce8; border-right: 4px solid #eab308; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.75rem; font-size: 0.88rem; color: #713f12; }
+  .env-table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; font-size: 0.88rem; }
+  .env-table th { text-align: right; background: #f8fafc; padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; color: #64748b; font-weight: 600; }
+  .env-table td { padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; font-family: monospace; }
+  .env-table td:first-child { background: #f1f5f9; }
+  .done-badge { display: inline-block; background: #dcfce7; color: #166534; border-radius: 999px; padding: 0.2rem 0.75rem; font-size: 0.8rem; font-weight: 600; margin-right: 0.5rem; }
+  ol li { margin-bottom: 0.5rem; color: #475569; font-size: 0.95rem; }
+  ol { padding-right: 1.5rem; margin-top: 0.5rem; }
+  .header-bar { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 2rem 1.5rem; border-radius: 20px; margin-bottom: 2rem; text-align: center; }
+  .header-bar h1 { color: white; font-size: 1.8rem; }
+  .header-bar p { color: #c7d2fe; margin-top: 0.5rem; }
+  .free-badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 999px; padding: 0.2rem 0.75rem; font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header-bar">
+    <h1>🚀 نشر DevPlan Pro على الإنترنت</html>
+    <p>اتبع هذه الخطوات لتشغيل تطبيقك على أي جهاز وأي مكان</p>
+    <span class="free-badge">✓ مجاني 100%</span>
+  </div>
+
+  <!-- Step 1: GitHub -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <h2>📦 رفع الكود على GitHub</h2>
+    <p>GitHub هو المكان الذي يُحفظ فيه كودك ويتصل منه Vercel.</p>
+    <ol>
+      <li>سجّل حساباً في <a href="https://github.com" target="_blank" style="color:#4f46e5;font-weight:600;">github.com</a> إذا ما عندك</li>
+      <li>اضغط "+" ثم "New repository" — سمّه <strong>devplan-pro</strong></li>
+      <li>اتركه Private وأنشئه</li>
+      <li>ارفع ملفات مجلد <strong>devplan-pro</strong> عبر زر "uploading an existing file"</li>
+    </ol>
+    <div class="tip">💡 ارفع كل الملفات دفعة واحدة بالسحب والإفلات على صفحة GitHub</div>
+  </div>
+
+  <!-- Step 2: Turso -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <h2>🗄️ إنشاء قاعدة بيانات في Turso (مجاني)</h2>
+    <p>Turso هي قاعدة بيانات SQLite سحابية مجانية تعمل مع Vercel.</p>
+    <ol>
+      <li>سجّل حساباً في <a href="https://turso.tech" target="_blank" style="color:#4f46e5;font-weight:600;">turso.tech</a></li>
+      <li>اضغط "Create Database" — سمّه <strong>devplan</strong> واختر أقرب منطقة</li>
+      <li>بعد الإنشاء: اضغط على قاعدة البيانات ثم <strong>Connect → SDK</strong></li>
+      <li>انسخ <strong>Database URL</strong> (يبدأ بـ libsql://...) و <strong>Auth Token</strong></li>
+    </ol>
+    <table class="env-table">
+      <tr><th>المتغير</th><th>القيمة</th></tr>
+      <tr><td>TURSO_DATABASE_URL</td><td>libsql://devplan-yourname.turso.io</td></tr>
+      <tr><td>TURSO_AUTH_TOKEN</td><td>eyJhbGci... (النص الطويل)</td></tr>
+    </table>
+  </div>
+
+  <!-- Step 3: Vercel -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <h2>⚡ نشر على Vercel (مجاني)</h2>
+    <p>Vercel يستضيف تطبيقك ويعطيك رابطاً يعمل من أي مكان.</p>
+    <ol>
+      <li>سجّل في <a href="https://vercel.com" target="_blank" style="color:#4f46e5;font-weight:600;">vercel.com</a> باستخدام حساب GitHub</li>
+      <li>اضغط <strong>Add New → Project</strong></li>
+      <li>اختر مستودع <strong>devplan-pro</strong> من GitHub</li>
+      <li>قبل الضغط على Deploy، اضغط <strong>Environment Variables</strong> وأضف:</li>
+    </ol>
+    <table class="env-table" style="margin-top:0.75rem;">
+      <tr><th>الاسم</th><th>القيمة</th></tr>
+      <tr><td>ANTHROPIC_API_KEY</td><td>مفتاح Anthropic الخاص بك (sk-ant-...)</td></tr>
+      <tr><td>TURSO_DATABASE_URL</td><td>libsql://... (من الخطوة 2)</td></tr>
+      <tr><td>TURSO_AUTH_TOKEN</td><td>النص الطويل (من الخطوة 2)</td></tr>
+    </table>
+    <ol start="5" style="margin-top:0.75rem;">
+      <li>اضغط <strong>Deploy</strong> وانتظر دقيقتين</li>
+      <li>ستحصل على رابط مثل: <strong>devplan-pro-xyz.vercel.app</strong></li>
+    </ol>
+    <div class="tip">💡 هذا الرابط يعمل من الجوال والكمبيوتر وأي جهاز بدون تثبيت أي شيء</div>
+  </div>
+
+  <!-- Step 4: Mobile -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <h2>📱 استخدامه من الجوال</h2>
+    <p>افتح الرابط الذي أعطاك إياه Vercel في أي متصفح على جوالك، والتطبيق يعمل مباشرةً.</p>
+    <div class="tip">💡 يمكنك إضافته لشاشة الهاتف كـ"تطبيق": في Safari اضغط مشاركة ← "أضف إلى الشاشة الرئيسية"</div>
+  </div>
+
+  <!-- Updates -->
+  <div class="step">
+    <div class="step-num">5</div>
+    <h2>🔄 تحديث التطبيق لاحقاً</h2>
+    <p>عند تعديل أي ملف وإعادة رفعه على GitHub، يقوم Vercel تلقائياً بتحديث الموقع خلال دقيقتين.</p>
+    <div class="warn">⚠️ لا ترفع ملف <strong>.env.local</strong> على GitHub — يحتوي على مفاتيح سرية. أضفه في Vercel فقط عبر Environment Variables.</div>
+  </div>
+
+  <div style="text-align:center; color:#94a3b8; font-size:0.85rem; margin-top:2rem; padding-bottom:1rem;">
+    DevPlan Pro · Built with Next.js + Turso + Vercel
+  </div>
+</div>
+</body>
+</html>
