@@ -1,4 +1,4 @@
-import { createClient, Client } from '@libsql/client';
+import { createClient, Client, InValue } from '@libsql/client';
 
 let _client: Client | null = null;
 
@@ -73,7 +73,7 @@ export async function ensureSchema(): Promise<void> {
 
 export async function dbAll<T = Record<string, unknown>>(
   sql: string,
-  args: unknown[] = [],
+  args: InValue[] = [],
 ): Promise<T[]> {
   await ensureSchema();
   const result = await getClient().execute({ sql, args });
@@ -82,7 +82,7 @@ export async function dbAll<T = Record<string, unknown>>(
 
 export async function dbGet<T = Record<string, unknown>>(
   sql: string,
-  args: unknown[] = [],
+  args: InValue[] = [],
 ): Promise<T | undefined> {
   const rows = await dbAll<T>(sql, args);
   return rows[0];
@@ -90,7 +90,7 @@ export async function dbGet<T = Record<string, unknown>>(
 
 export async function dbRun(
   sql: string,
-  args: unknown[] = [],
+  args: InValue[] = [],
 ) {
   await ensureSchema();
   return getClient().execute({ sql, args });
